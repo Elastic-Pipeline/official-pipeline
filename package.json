@@ -1,0 +1,7 @@
+{
+    "moduleDependencies": 
+    [
+        "official-generic-layout",
+        "official-base-authentication"
+    ]
+}
