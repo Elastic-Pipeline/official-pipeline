@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include(MODULE_Official_Generic_Layout + '/partials/head'); %>
+    </head>
+    <body class="container">
+
+    <header>
+        <%- include(MODULE_Official_Pipeline + '/partials/header'); %>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-3">
+                <div class="jumbotron">
+                    <h1>Side View</h1>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="jumbotron">
+                    <h1>Folders/Jobs/Pipelines</h1>
+                    <div class="card">
+                      <div class="card-body">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Last Successful</th>
+                                <th scope="col">Last Failed</th>
+                                <th scope="col"></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row"><span class="badge bg-success rounded-pill">Successful</span></th>
+                                <td>Example Job</td>
+                                <td>11h 30m <a href="#">#1</a></td>
+                                <td>Never</td>
+                                <td><a class="btn btn-sm btn-primary" href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></td>
+                              </tr>
+                              <tr>
+                                <th scope="row"><span class="badge bg-warning rounded-pill">Unstable</span></th>
+                                <td>Example Job</td>
+                                <td>5m <a href="#">#2</a></td>
+                                <td>5h 00m <a href="#">#1</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></td>
+                              </tr>
+                              <tr>
+                                <th scope="row"><span class="badge bg-danger rounded-pill">Failed</span></th>
+                                <td>Example Job</td>
+                                <td>Never</td>
+                                <td>2h 30m <a href="#">#4</a></td>
+                                <td><a class="btn btn-sm btn-primary" href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                    </div>
+                    <a href="<%- link('home') -%>">Home</a>
+                    <img src="<%- asset('placeholder.jpg') -%>"/>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include(MODULE_Official_Generic_Layout + '/partials/footer'); %>
+    </footer>
+
+    </body>
+</html>

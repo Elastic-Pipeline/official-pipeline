@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Elastic-Pipeline</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="<%- link('home') -%>">Home</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav">
+        <% if (typeof user == 'undefined') { %>
+            <a class="nav-link" href="<%- link('login') -%>">Login</a>
+            <a class="nav-link" href="<%- link('register') -%>">Register</a>
+        <% } else { %>
+            <a class="btn btn-primary btn-md " href="<%- link('logout') -%>" role="button">User</a>
+        <% } %>
+    </ul>
+</nav>
