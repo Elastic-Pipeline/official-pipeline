@@ -10,17 +10,23 @@
     </header>
 
     <main>
+           <!-- Breadcrumbs -->
+                    
         <div class="row">
+          <!-- Left Pane -->
             <div class="col-3">
-                <div class="jumbotron">
-                    <h1>Side View</h1>
+                <div class="jumbotron container my-2 py-4">
+                  <a class="btn btn-primary btn-bg container" href="#" role="button"><i class="fa fa-plus" aria-hidden="true"></i> New Job</a>
+                  <a class="btn btn-primary btn-bg container my-2" href="#" role="button"><i class="fa fa-cogs" aria-hidden="true"></i> Configuration</a>
                 </div>
             </div>
+            <!-- Right Pane -->
             <div class="col-9">
                 <div class="jumbotron">
                     <h1>Folders/Jobs/Pipelines</h1>
                     <div class="card">
                       <div class="card-body">
+                        <!-- Display Jobs... -->
                         <table class="table">
                             <thead>
                               <tr>
@@ -55,6 +61,24 @@
                               </tr>
                             </tbody>
                           </table>
+                          <!-- Page Navigation for Jobs... -->
+                          <nav aria-label="Page navigation" class="d-flex justify-content-center">
+                            <ul class="pagination pagination-sm">
+                              <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&lt;</span>
+                                </a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link bg-primary" href="#">2</a></li>
+                              
+                              <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                  <span aria-hidden="true">&gt;</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
                       </div>
                     </div>
                     <a href="<%- link('home') -%>">Home</a>

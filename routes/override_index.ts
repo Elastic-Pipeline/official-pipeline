@@ -1,5 +1,4 @@
-import { RouteManager } from "../../../API/internal/RouteManager";
-import { Route, ROUTE_FIRST } from "../../../API/Routing";
+import { Route, ROUTE_FIRST } from "../../../API/Routing/Routing";
 
 export class OverrideIndexPipelineRoute extends Route
 {
@@ -7,9 +6,9 @@ export class OverrideIndexPipelineRoute extends Route
     {
         super("/");
 
-        this.Get("", (req, res, next) => 
+        this.Get("", async (req, res, next) => 
         {
-            return res.render('views/index');
+            res.render('views/index');
         }, "home", ROUTE_FIRST);
     }
 }

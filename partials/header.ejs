@@ -10,7 +10,7 @@
             <a class="nav-link" href="<%- link('login') -%>">Login</a>
             <a class="nav-link" href="<%- link('register') -%>">Register</a>
         <% } else { %>
-            <a class="btn btn-primary btn-md " href="<%- link('logout') -%>" role="button">User</a>
+            <a class="btn btn-primary btn-md " href="<%- link('logout') -%>" role="button"><%- user.GetUsername() %></a>
         <% } %>
     </ul>
 </nav>

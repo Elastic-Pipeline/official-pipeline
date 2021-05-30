@@ -1,4 +1,4 @@
-import { Route, RouteType } from "../../../API/Routing";
+import { Route, RouteType } from "../../../API/Routing/Routing";
 
 export class ProjectRoute extends Route
 {
@@ -6,24 +6,24 @@ export class ProjectRoute extends Route
     {
         super('projects');
 
-        this.Get(':projectName', (req, res, next) => 
+        this.Get(':projectName', async (req, res, next) => 
         {
-            return res.status(200).send([req.params.projectName].join('|'));
+            res.status(200).send([req.params.projectName].join('|'));
         });
 
-        this.CustomRoute(RouteType.GET | RouteType.POST, ':projectName/build', (req, res, next) => 
+        this.CustomRoute(RouteType.GET | RouteType.POST, ':projectName/build', async (req, res, next) => 
         {
-            return res.status(200).send([req.params.projectName].join('|'));
+            res.status(200).send([req.params.projectName].join('|'));
         });
         
-        this.Get(':projectName/configuration', (req, res, next) => 
+        this.Get(':projectName/configuration', async (req, res, next) => 
         {
-            return res.status(200).send([req.params.projectName].join('|'));
+            res.status(200).send([req.params.projectName].join('|'));
         });
 
-        this.Get(':projectName/logs/:logID', (req, res, next) => 
+        this.Get(':projectName/logs/:logID', async (req, res, next) => 
         {
-            return res.status(200).send([req.params.projectName, req.params.logID].join('|'));
+            res.status(200).send([req.params.projectName, req.params.logID].join('|'));
         });
     }
 }

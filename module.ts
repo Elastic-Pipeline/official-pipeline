@@ -1,4 +1,4 @@
-import { AttachmentAppIntegration, Module, ModuleManager } from "../../API/Module";
+import { AttachmentAppIntegration, Module, ModuleManager } from "../../API/Modules/Module";
 import fs from "fs";
 import path from "path";
 import { ProjectRoute } from "./routes/projects";
