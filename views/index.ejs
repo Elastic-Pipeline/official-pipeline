@@ -17,8 +17,11 @@
           <!-- Left Pane -->
             <div class="col-3">
                 <div class="jumbotron container my-2 py-4">
-                  <a class="btn btn-primary btn-bg container" href="#" role="button"><i class="fa fa-plus" aria-hidden="true"></i> New Job</a>
-                  <a class="btn btn-primary btn-bg container my-2" href="#" role="button"><i class="fa fa-cogs" aria-hidden="true"></i> Configuration</a>
+                  <% if (typeof(sidePages) == 'object') { %>
+                    <% for (var i=0; i<sidePages.length; i++) { %>
+                      <a class="btn btn-primary btn-bg container my-1" href="<%- link(sidePages[i].GetURI()) %>" role="button"><%- sidePages[i].GetName() %></a>
+                    <% } %>
+                  <% } %>
                 </div>
             </div>
             <!-- Right Pane -->
@@ -49,13 +52,11 @@
                           </nav>
                       </div>
                     </div>
-                    <a href="<%- link('home') -%>">Home</a>
-                    <img src="<%- asset('placeholder.jpg') -%>"/>
                 </div>
             </div>
         </div>
       </main>
-      <footer>
+      <footer class='fixed-bottom'>
           <%- include(INTERNAL_MODULE_GLOBAL + '/partials/footer'); %>
       </footer>
       <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.tail.ejs'); %>
