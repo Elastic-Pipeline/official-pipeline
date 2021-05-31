@@ -27,40 +27,7 @@
                     <div class="card">
                       <div class="card-body">
                         <!-- Display Jobs... -->
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Last Successful</th>
-                                <th scope="col">Last Failed</th>
-                                <th scope="col"></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row"><span class="badge bg-success rounded-pill">Successful</span></th>
-                                <td>Example Job</td>
-                                <td>11h 30m <a href="#">#1</a></td>
-                                <td>Never</td>
-                                <td><a class="btn btn-sm btn-primary" href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><span class="badge bg-warning rounded-pill">Unstable</span></th>
-                                <td>Example Job</td>
-                                <td>5m <a href="#">#2</a></td>
-                                <td>5h 00m <a href="#">#1</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><span class="badge bg-danger rounded-pill">Failed</span></th>
-                                <td>Example Job</td>
-                                <td>Never</td>
-                                <td>2h 30m <a href="#">#4</a></td>
-                                <td><a class="btn btn-sm btn-primary" href="#"><i class="fa fa-cogs" aria-hidden="true"></i></a></td>
-                              </tr>
-                            </tbody>
-                          </table>
+                          <%- projectsTable %>
                           <!-- Page Navigation for Jobs... -->
                           <nav aria-label="Page navigation" class="d-flex justify-content-center">
                             <ul class="pagination pagination-sm">
