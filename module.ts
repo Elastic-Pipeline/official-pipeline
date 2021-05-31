@@ -9,7 +9,7 @@ class PipelineModule extends Module
     constructor()
     {
         super("Official Pipeline", fs.readFileSync(path.resolve(__dirname, "./version.txt")).toString("utf-8"));
-        
+
         this.RegisterRoute(new OverrideIndexPipelineRoute());
         this.RegisterRoute(new ProjectRoute());
     }
