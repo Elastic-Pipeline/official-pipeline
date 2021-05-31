@@ -2,16 +2,17 @@
 <html lang="en">
     <head>
         <%- include(MODULE_Official_Generic_Layout + '/partials/head'); %>
+        <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.head.ejs'); %>
     </head>
     <body class="container">
 
-    <header>
-        <%- include(MODULE_Official_Pipeline + '/partials/header'); %>
-    </header>
+      <header>
+          <%- include(MODULE_Official_Pipeline + '/partials/header'); %>
+      </header>
 
-    <main>
-           <!-- Breadcrumbs -->
-                    
+      <main>
+        <!-- Breadcrumbs -->
+
         <div class="row">
           <!-- Left Pane -->
             <div class="col-3">
@@ -38,7 +39,7 @@
                               </li>
                               <li class="page-item"><a class="page-link" href="#">1</a></li>
                               <li class="page-item"><a class="page-link bg-primary" href="#">2</a></li>
-                              
+
                               <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next">
                                   <span aria-hidden="true">&gt;</span>
@@ -53,11 +54,10 @@
                 </div>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <%- include(MODULE_Official_Generic_Layout + '/partials/footer'); %>
-    </footer>
-
-    </body>
+      </main>
+      <footer>
+          <%- include(INTERNAL_MODULE_GLOBAL + '/partials/footer'); %>
+      </footer>
+      <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.tail.ejs'); %>
+     </body>
 </html>

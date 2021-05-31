@@ -10,7 +10,15 @@
             <a class="nav-link" href="<%- link('login') -%>">Login</a>
             <a class="nav-link" href="<%- link('register') -%>">Register</a>
         <% } else { %>
-            <a class="btn btn-primary btn-md " href="<%- link('logout') -%>" role="button"><%- user.GetUsername() %></a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="userProfileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%- user.GetUsername() %>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="userProfileDropdown">
+                  <li><a class="dropdown-item" href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
+                  <li><a class="dropdown-item" href="<%- link('logout') -%>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                </ul>
+            </div>
         <% } %>
     </ul>
 </nav>
