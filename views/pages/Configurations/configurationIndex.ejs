@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include(MODULE_Official_Generic_Layout + '/partials/head'); %>
+        <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.head.ejs'); %>
+    </head>
+    <body class="container">
+
+      <header>
+          <%- include(MODULE_Official_Pipeline + '/partials/header'); %>
+      </header>
+
+      <main>
+        <!-- Breadcrumbs -->
+
+        <div class="row">
+          <!-- Left Pane -->
+            <div class="col-3">
+                <div class="jumbotron container my-2 py-4">
+                  <% if (typeof(sidePages) == 'object') { %>
+                    <% for (var i=0; i<sidePages.length; i++) { %>
+                      <a class="btn btn-primary btn-bg container my-1" href="<%- link(sidePages[i].GetURI()) %>" role="button"><%- sidePages[i].GetName() %></a>
+                    <% } %>
+                  <% } %>
+                </div>
+            </div>
+            <!-- Right Pane -->
+            <div class="col-9">
+                <div class="jumbotron">
+                    <% for( let index = 0; index < subPages.length; index++ ) { %>
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title"><%- subPages[index].GetName() %> </h5>
+                          <p class="card-text"><%- subPages[index].GetDescription() %></p>
+                        </div>
+                      </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+      </main>
+      <footer class='fixed-bottom'>
+          <%- include(INTERNAL_MODULE_GLOBAL + '/partials/footer'); %>
+      </footer>
+      <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.tail.ejs'); %>
+     </body>
+</html>

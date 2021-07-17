@@ -1,9 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Elastic-Pipeline</a>
+    <a class="navbar-brand" href="<%- link('home') -%>">Elastic-Pipeline</a>
     <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="<%- link('home') -%>">Home</a>
-        </li>
+        <% if (typeof(navigationPages) == 'object') { %>
+            <% for( let index = 0; index < navigationPages.length; index++ ) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%- link(navigationPages[index].GetURI()) -%>"> <%- navigationPages[index].GetName() %></a>
+                </li>
+            <% } %>
+        <% } %>
     </ul>
     <ul class="navbar-nav">
         <% if (typeof user == 'undefined') { %>

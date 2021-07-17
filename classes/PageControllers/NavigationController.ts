@@ -12,8 +12,8 @@ export class NavigationController
     // When a Page is registered, it is treated like the root here.
     //  Root doesn't necessary become `/`
     //  Root is located where generic page home page is located.
-    public static RegisterPage(_page: Page)
+    public static RegisterPage(_page: Page, _insert: number = -1)
     {
-        this.internal.RegisterPage(_page);
+        this.internal.RegisterPage(_page, _insert);
     }
 }
