@@ -1,0 +1,9 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="<%- link('dashboard') %>">Dashboard</a></li>
+        <% if (typeof(breadcrumb) != 'undefined') { %>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        <% } %>
+    </ol>
+</nav>

@@ -16,13 +16,7 @@
         <div class="row">
           <!-- Left Pane -->
             <div class="col-3">
-                <div class="jumbotron container my-2 py-4">
-                  <% if (typeof(sidePages) == 'object') { %>
-                    <% for (var i=0; i<sidePages.length; i++) { %>
-                      <a class="btn btn-primary btn-bg container my-1" href="<%- link(sidePages[i].GetURI()) %>" role="button"><%- sidePages[i].GetName() %></a>
-                    <% } %>
-                  <% } %>
-                </div>
+                <%- include(MODULE_Official_Pipeline + '/partials/sidebar') %>
             </div>
             <!-- Right Pane -->
             <div class="col-9">

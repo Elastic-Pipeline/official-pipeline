@@ -34,6 +34,6 @@ export class OverrideIndexPipelineRoute extends Route
             );
             projectsTable.SetTableClass("table");
             res.render('views/index', { projectsTable: projectsTable.Display() });
-        }, "home", ROUTE_FIRST);
+        }, ["home", 'dashboard'], ROUTE_FIRST);
     }
 }

@@ -6,7 +6,8 @@ export class CreateJobPage extends Page
 {
     constructor()
     {
-        super("<i class='fa fa-plus' aria-hidden='true'></i> New Job", "/job/create", 'create_job');
+        super("New Job", "/job/create", 'create_job');
+        this.icon = 'fa fa-plus'
     }
 
     public async RouteFunction(req: Request, res: Response, next: NextFunction)

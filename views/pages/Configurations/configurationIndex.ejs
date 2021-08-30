@@ -6,42 +6,43 @@
     </head>
     <body class="container">
 
-      <header>
-          <%- include(MODULE_Official_Pipeline + '/partials/header'); %>
-      </header>
+        <header>
+            <%- include(MODULE_Official_Pipeline + '/partials/header'); %>
+            <%- include(MODULE_Official_Pipeline + '/partials/breadcrumbs') %>
+        </header>
 
-      <main>
-        <!-- Breadcrumbs -->
+        <main>
+            <!-- Breadcrumbs -->
 
-        <div class="row">
-          <!-- Left Pane -->
-            <div class="col-3">
-                <div class="jumbotron container my-2 py-4">
-                  <% if (typeof(sidePages) == 'object') { %>
-                    <% for (var i=0; i<sidePages.length; i++) { %>
-                      <a class="btn btn-primary btn-bg container my-1" href="<%- link(sidePages[i].GetURI()) %>" role="button"><%- sidePages[i].GetName() %></a>
-                    <% } %>
-                  <% } %>
+            <div class="row">
+                <!-- Left Pane -->
+                <div class="col-3">
+                    <%- include(MODULE_Official_Pipeline + '/partials/sidebar') %>
+                </div>
+                <!-- Right Pane -->
+                <div class="col-9">
+                    <div class="jumbotron">
+                        <% entries = subPages.forEach(function(categoryPage)
+                        {%>
+                            <h2 id="<%- categoryPage.GetName() %>"><%- categoryPage.GetName() %></h2>
+
+                            <% entries = categoryPage.GetSubPages().forEach(function(configPage)
+                            {%>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="<%- link(configPage.GetURI()) %>"><%- configPage.GetName() %></a></h5>
+                                        <p class="card-text"><%- configPage.GetDescription() %></p>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        <% }); %>
+                    </div>
                 </div>
             </div>
-            <!-- Right Pane -->
-            <div class="col-9">
-                <div class="jumbotron">
-                    <% for( let index = 0; index < subPages.length; index++ ) { %>
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title"><%- subPages[index].GetName() %> </h5>
-                          <p class="card-text"><%- subPages[index].GetDescription() %></p>
-                        </div>
-                      </div>
-                    <% } %>
-                </div>
-            </div>
-        </div>
-      </main>
-      <footer class='fixed-bottom'>
-          <%- include(INTERNAL_MODULE_GLOBAL + '/partials/footer'); %>
-      </footer>
-      <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.tail.ejs'); %>
-     </body>
+        </main>
+        <footer class='fixed-bottom'>
+            <%- include(INTERNAL_MODULE_GLOBAL + '/partials/footer'); %>
+        </footer>
+        <%- include(MODULE_Official_Bootstrap_Form_Wrapper + '/partials/remote.tail.ejs'); %>
+    </body>
 </html>

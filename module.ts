@@ -6,8 +6,7 @@ import { OverrideIndexPipelineRoute } from "./routes/override_index";
 import { NavigationController } from "./classes/PageControllers/NavigationController";
 import { CreateJobPage } from "./pages/jobs/CreateJobPage";
 import { PageController } from "../official-generic-layout/classes/PageController"
-import { ConfigurationPage } from "../official-configuaration-page/pages/ConfigurationIndex";
-import { ConfigurationServer } from "./pages/configuration/ServerConfig";
+import { ConfigurationPage } from "../official-configuration-page/pages/ConfigurationIndex";
 import { OverrideConfigurationFunc } from "./pages/configuration/Override_Configuration";
 
 class PipelineModule extends Module
@@ -23,7 +22,6 @@ class PipelineModule extends Module
         }, AttachmentAppIntegration.PRE);
 
         PageController.RegisterPage(new CreateJobPage(), 0);
-        ConfigurationPage.AddSubPage(new ConfigurationServer());
         ConfigurationPage.func = OverrideConfigurationFunc;
 
         this.RegisterRoute(new OverrideIndexPipelineRoute());

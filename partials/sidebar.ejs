@@ -1,0 +1,8 @@
+<div class="jumbotron container my-2 py-4">
+    <% if (typeof(sidePages) == 'object') { %>
+        <% for (var i=0; i<sidePages.length; i++) { %>
+            <% if (sidePages[i].GetHidden()) continue; %>
+            <a class="btn btn-primary btn-bg container my-1" href="<%- link(sidePages[i].GetURI()) %>" role="button"><%- sidePages[i].GetIcon() %> <%- sidePages[i].GetName() %></a>
+        <% } %>
+    <% } %>
+</div>
